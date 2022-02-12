@@ -85,3 +85,19 @@ ul > li {
 .errorValidation {
   color: red;
 }
+
+.colorAdder {
+  margin: 20px;
+  padding: 20px;
+}
+
+.colorInput {
+  width: 40%;
+  height: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.addColorButton {
+  margin-left: 10px;
+}

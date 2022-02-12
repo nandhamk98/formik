@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { AddMovie } from "./AddMovieComponent";
 import { MovieList } from "./MovieListComp";
+import { AddColor } from "./AddColor";
 
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -56,6 +57,12 @@ function App() {
                 </Button>
                 <Button
                   color="inherit"
+                  onClick={() => history.push("/add-color")}
+                >
+                  Add Color
+                </Button>
+                <Button
+                  color="inherit"
                   onClick={() => setMode(mode === "light" ? "dark" : "light")}
                 >
                   {mode === "light" ? "Dark Mode" : "Light Mode"}
@@ -78,6 +85,9 @@ function App() {
           <Switch>
             <Route path="/add-movies" exact>
               <AddMovie />
+            </Route>
+            <Route path="/add-color" exact>
+              <AddColor />
             </Route>
             <Route path="/movies/edit/:id" exact>
               <EditMovie />

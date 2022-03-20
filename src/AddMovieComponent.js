@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { API } from "./global";
 
 function AddMovie() {
   const history = useHistory();
@@ -38,7 +39,7 @@ function AddMovie() {
   });
 
   const addMoviesThroughPost = (movieData) => {
-    fetch("https://6197ebee164fa60017c22ebd.mockapi.io/movies", {
+    fetch(`${API}/movies`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,11 +1,12 @@
 import { MovieComponent } from "./MovieComponent";
 import { useState, useEffect } from "react";
+import { API } from "./global";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
 
   const deleteMovie = (id) => {
-    fetch("https://6197ebee164fa60017c22ebd.mockapi.io/movies/" + id, {
+    fetch(`${API}/movies` + id, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -16,7 +17,7 @@ function MovieList() {
   };
 
   const getMovie = () => {
-    fetch("https://6197ebee164fa60017c22ebd.mockapi.io/movies")
+    fetch(`${API}/movies`)
       .then((data) => data.json())
       .then((mvs) => {
         console.log(mvs);

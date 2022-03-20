@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { API } from "./global";
 
 function EditMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   useEffect(() => {
-    fetch("https://6197ebee164fa60017c22ebd.mockapi.io/movies/" + id)
+    fetch(`${API}/movies` + id)
       .then((data) => data.json())
       .then((mvs) => {
         // console.log("movies", mvs);
@@ -53,7 +54,7 @@ function EditMovieSubComp({ movie }) {
   });
 
   const editMoviesThroughPut = (movieData) => {
-    fetch("https://6197ebee164fa60017c22ebd.mockapi.io/movies/" + movie.id, {
+    fetch(`${API}/movies` + movie.id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
